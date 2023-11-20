@@ -1,38 +1,263 @@
+body{
+  background-color: #282c34;
+  font-family: andale mono, monospace;
+}
+
 .App {
   text-align: center;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
 .App-header {
   background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
+  min-height: 7vh;
   align-items: center;
-  justify-content: center;
+  justify-content: top;
   font-size: calc(10px + 2vmin);
   color: white;
+  padding-top: 20px;
 }
 
-.App-link {
-  color: #61dafb;
+.box{
+  min-height: max-content;
+  height: 80vh;
+  width: 46vw;
+  border: #33334d solid 3px;
+  color: aliceblue;
+  text-align: center;
+  margin: 2vw;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  background-color:  #21252b;
+  position: relative;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+#Container{
+  display: flex;
+  flex-direction: row;
+}
+
+input{
+  background-color: #16191d;
+  color: aliceblue;
+  border-radius: 20px;
+  border: aliceblue solid 2px;
+  width: 15vw;
+  height: 3vh;
+  padding-left: 1vw;
+  font-size: calc(10px + 1vmin);
+  margin-right: .9vw;
+}
+
+.box p{
+  margin-left: 1vh;
+  font-size: calc(12px + 1vmin);
+}
+
+.iBox{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding-left: 2vw;
+  padding-right: 2vw;
+  align-items: center;
+}
+#SL{
+  border-color: red;
+  color: red;
+}
+#pSL{
+  color: red;
+}
+#TPbox{
+  color: green;
+}
+
+#TPbox input{
+  border-color: green;
+  color: green;
+}
+
+.iBox button{
+  box-shadow:inset 0px 0px 5px 6px #226310;
+	background:linear-gradient(to bottom, #00f541 5%, #528f31 100%);
+	background-color:#00f541;
+	border-radius:42px;
+	border:1px solid #105217;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Arial;
+	font-size: calc(10px + 1vmin);
+	font-weight:bold;
+	padding:0.8vh 0.8vw;
+  transition: 0.2s;
+  margin-left: 1vw;
+  margin-right: 1vw;
+  position: absolute;
+  bottom: 15px;
+}
+
+.box button:first-child{
+  left: 0px;
+}
+
+.box button:last-child{
+  right: 0px;
+}
+
+.iBox button:hover{
+  box-shadow:inset 0px 0px 3px 4px #226310;
+	border:1px solid #226310;
+}
+
+#RiskManagment{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  font-size: calc(5px + 0.5vmin);
+}
+
+#RiskManagment input{
+  width: 10vw;
+  margin-left: 1vw;
+  margin-right: 1vw;
+}
+#DeleteTP{
+  box-shadow:inset 0px 0px 3px 6px #5c2323;
+	background:linear-gradient(to bottom, #7a2020 5%, #eb1717 100%);
+	background-color:#7a2020;
+	border-radius:42px;
+	border:1px solid #451e1e;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Arial;
+	font-size: calc(10px + 1vmin);
+	font-weight:bold;
+	padding:0.9vh 0.9vw;;
+	text-decoration:none;
+  transition: 0.2s;
+}
+
+#DeleteTP:hover{
+  box-shadow:inset 0px 0px 3px 4px #5c2323;
+	border:1px solid #5c2323;
+}
+
+
+.iBox label{
+  margin-left: 1vh;
+  font-size: calc(12px + 1vmin);
+}
+
+#Currency{
+  background-color: #16191d;
+  color: aliceblue;
+  border-radius: 20px;
+  border: aliceblue solid 2px;
+  width: 16vw;
+  height: 3.5vh;
+  padding-left: 1vw;
+  font-size: calc(10px + 1vmin);
+  text-align: center;
+  margin-right: 1vw;
+}
+
+#Calculate{
+  width: 40vw;
+  height: 5vh;
+  background-color: #282c34;
+  font-family: andale mono, monospace;
+  color: aliceblue;
+  border: #33334d solid 3px;
+  margin-top: auto;
+  margin-right: auto;
+  margin-left: auto;
+  margin-bottom: 8vh;
+  transition: 0.5s;
+}
+
+#Calculate:hover{
+  background-color: #33334d;
+  border: #282c34 solid 3px;
+  box-shadow: 0px 0px 2px 2px #33334d;
+  animation: blink 2.5s infinite;
+}
+
+@keyframes blink {
+  0% {
+    box-shadow: 0px 0px 2px 2px #33334d;
   }
-  to {
-    transform: rotate(360deg);
+  50% {
+    box-shadow: 0px 0px 3px 3px #282c34;
   }
+  75%{
+    box-shadow: 0px 0px 4px 4px aliceblue;
+  }
+  100% {
+    box-shadow: 0px 0px 2px 2px #33334d;
+  }
+}
+@media screen and (max-width: 1200px){
+  #Container{
+    flex-direction: column;
+  }
+  .box{
+    width: 96vw;
+    height: max-content;
+    margin: 2vw;
+    min-height: 50vh;
+  }
+}
+
+#Results{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding-left: 2vw;
+  padding-right: 2vw;
+  align-items: start;
+}
+
+#ProcentTP1{
+  width: 3vw;
+  margin-right: 0;
+}
+#ProcentTP2{
+  width: 3vw;
+  margin-right: 0;
+}
+#ProcentTP3{
+  width: 3vw;
+  margin-right: 0;
+}
+b{
+  font-size: calc(10px + 1.5vmin);
+}
+
+#TP2{
+  margin-left: 0.8vw;
+}
+#TP3{
+  margin-left: 0.8vw;
+}
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+#ResultTP1{
+  margin-bottom: 2vh;
+}
+#ResultTP2{
+  margin-bottom: 4.5vh;
+}
+#ResultTP3{
+  margin-bottom: 3vh;
 }
